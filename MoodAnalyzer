@@ -1,0 +1,71 @@
+public class MoodAnalyzer {                                                                   //Main java file to be checked
+
+
+    public String analyzeMood(String message){
+
+        if(message.contains(("sad"))) {
+            return "SAD";
+        }
+        else {
+            return "HAPPY";
+        }
+
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+import org.hamcrest.CoreMatchers;
+import org.junit.Assert;
+import org.junit.Test;
+
+public class MoodAnalyzerTest {                                                             //Test Class
+
+    @Test
+    public void testMoodAnalysis(){                                                           //First Test Function/Method (Right TestCase)                                  
+
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+
+        String mood = moodAnalyzer.analyzeMood("This is a sad message");
+
+        Assert.assertEquals(mood,"SAD" );
+
+
+    }
+    
+    @Test   
+    public void testMoodAnalysis1(){                                                          //Second Test Function/Method (Wrong TestCase)                                  
+
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+
+        String mood1 = moodAnalyzer.analyzeMood("This is a Sad message");
+
+        Assert.assertEquals(mood1,"SAD" );
+
+
+    }
+
+}
+
+
+
+------------------------------------------------------------------------------------------
+
+plugins {                                               
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+// https://mvnrepository.com/artifact/junit/junit
+    testCompile group: 'junit', name: 'junit', version: '4.13.1'                                 //Gradle Dependency for Junit.
+
+}
+
+
