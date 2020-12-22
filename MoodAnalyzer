@@ -1,17 +1,20 @@
-public class MoodAnalyzer {                                                                   //Main java file to be checked
+public class MoodAnalyzer {
 
+    public String analyzeMood(String message) {
 
-    public String analyzeMood(String message){
+        try {
+            if (message.contains(("Sad")))
+                return "SAD";
+            else
+                return "HAPPY";
 
-        if(message.contains(("Sad"))) {
-            return "SAD";
-        }
-        else {
+        }catch (NullPointerException e){
             return "HAPPY";
         }
 
     }
 }
+
 
 ------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -39,6 +42,17 @@ public class MoodAnalyzerTest {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
 
         String mood = moodAnalyzer.analyzeMood("This is a Happy message");
+
+        Assert.assertEquals("HAPPY",mood);
+
+    }
+    
+     @Test
+    public void testMoodAnalysis1(){                                                        //To get HAPPY  //Null Pointer Exception
+
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+
+        String mood = moodAnalyzer.analyzeMood(null);
 
         Assert.assertEquals("HAPPY",mood);
 
