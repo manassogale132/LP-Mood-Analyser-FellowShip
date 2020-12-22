@@ -27,7 +27,7 @@ public class MoodAnalyzerTest {
 
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
 
-        String mood = moodAnalyzer.analyzeMood("This is a sad message");
+        String mood = moodAnalyzer.analyzeMood("This is a Sad message");
 
         Assert.assertEquals("SAD",mood);
 
