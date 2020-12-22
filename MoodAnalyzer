@@ -19,33 +19,32 @@ import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MoodAnalyzerTest {                                                             //Test Class
+
+public class MoodAnalyzerTest {
 
     @Test
-    public void testMoodAnalysis(){                                                           //First Test Function/Method (Right TestCase)                                  
+    public void testMoodAnalysis(){                                                            //To get SAD
 
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
 
         String mood = moodAnalyzer.analyzeMood("This is a sad message");
 
-        Assert.assertEquals(mood,"SAD" );
-
+        Assert.assertEquals("SAD",mood);
 
     }
-    
-    @Test   
-    public void testMoodAnalysis1(){                                                          //Second Test Function/Method (Wrong TestCase)                                  
+
+    @Test
+    public void testMoodAnalysis1(){                                                        //To get HAPPY
 
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
 
-        String mood1 = moodAnalyzer.analyzeMood("This is a Sad message");
+        String mood = moodAnalyzer.analyzeMood("This is a Happy message");
 
-        Assert.assertEquals(mood1,"SAD" );
-
+        Assert.assertEquals("HAPPY",mood);
 
     }
-
 }
+
 
 
 
