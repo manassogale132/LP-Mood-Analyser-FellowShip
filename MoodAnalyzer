@@ -2,7 +2,7 @@ public class MoodAnalyzer {
 
     public String analyzeMood(String message) {
 
-        try {
+        try {                                                                               //try-catch block to handle exception.
             if (message.contains(("Sad")))
                 return "SAD";
             else
@@ -48,7 +48,7 @@ public class MoodAnalyzerTest {
     }
     
      @Test
-    public void testMoodAnalysis1(){                                                        //To get HAPPY  //Null Pointer Exception
+    public void testMoodAnalysis2(){                                                        //To get HAPPY  //Null Pointer Exception
 
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
 
