@@ -36,7 +36,18 @@ public class MoodAnalyzerTest {
     }
 
     @Test
-    public void testMoodAnalysis1(){                                                       //To handle "null" and return HAPPY.
+    public void testMoodAnalysis1(){                                                        //To get HAPPY
+
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+
+        String mood = moodAnalyzer.analyzeMood("This is a Happy message");
+
+        Assert.assertEquals("HAPPY",mood);
+
+    }
+
+    @Test
+    public void testMoodAnalysis2(){                                                        //To get HAPPY  //Null Pointer Exception
 
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
 
@@ -48,7 +59,6 @@ public class MoodAnalyzerTest {
 
 
 }
-
 
 
 
